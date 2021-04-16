@@ -77,3 +77,49 @@ If you don't need 5V power for your testing, cut the trace connecting the two ha
 The same applies to the 3V3 circuit - you can choose to not cut it as well. 
 If the circuit is unpopulated nothing will change.
 I would personally recommend cutting it only in the case that you mess up one half of it and still want to use the other.
+
+## BOM
+
+|Part Ref|Value|Type|Link|
+|:-:|--:|--:|:-:|
+|`C1`-`C4`|47uF|Aluminum Polymer Cap|([digikey](https://www.digikey.com/en/products/detail/kemet/A768EB476M1VLAE042/13420538))|
+|`C5`, `C6`|0.1uF|Ceramic Cap|([digikey](https://www.digikey.com/en/products/detail/w-rth-elektronik/885012208087/5454754))|
+|`U1`|LM1117-3.3\*|Linear Regulator|([digikey](https://www.digikey.com/en/products/detail/on-semiconductor/LM1117MPX-33NOPB/13559953))|
+|`U2`|LM1117-5.0\*|Linear Regulator|([digikey](https://www.digikey.com/en/products/detail/on-semiconductor/LM1117MPX-50NOPB/13559966))|
+|`FB1`| -- |Ferrite Bead|([digikey](https://www.digikey.com/en/products/detail/w-rth-elektronik/742792312/1639577))|
+
+_\*I bought these very cheaply._
+_Notice that they're from ON Semiconductor rather than the more expensive LM1117-series from TI._
+_As best I could tell, the principal difference is a slightly lower rejection ratio of 65dB, whereas the TI models report a PSRR of 75dB._
+_My presumption here is that, while you can power your dev board/prototypes from your rack while it's fully on, you might want to have a test Eurorack supply for doing this dev work._
+_Better yet, a benchtop supply (a Eurorack case w/ supply and a reasonble hobbyist benchtop supply run you about the same $$$, so I bought a case first)._
+_This board might be slightly noisier with the ON Semiconductor regulators, but they're footprint compatible with the TI models if you are really worried about noise from the switching supply on your rack._
+
+## Board revision history
+
+A quick rundown of the revision history of the board, mostly for my own sanity. 
+Note that I'm tracking the schematic revision and board revision numbers separately. 
+The schematic may be unchanged between board revisions (and has been unchanged thus far).
+
+### `norev`
+
+My first boards were sent off to the fab without a revision marked on them because it was like 2AM when I uploaded them.
+These boards have the wrong license shorthand on the silkscreen, and no test points.
+
+### `rev01`
+
+The `rev01` boards were the boards first uploaded to github with the correct CC license on the silkscreen, along with a revision number.
+Front-side test points were added for the 3V3 and 5V traces.
+I have not sent this board revision to be fabbed.
+
+### `rev02`
+
+The `rev02` boards differ from the previous revisions as follows:
+
+- +12V and -12V lines are 0.4mm think, rather than 0.25mm as on previous revisions
+- The info silkscreen in the top right hand corner was change to remove the line about the optional regulators - too much text
+- The length of the board was reduced by 25 mils (should reduce the cost of the board a tiny amount)
+- More vias were added to the copper pours used for heat dissipation for the linear regulators
+- The positions of `C2` and `C3` were swapped, so that all **odd-numbered** components are on the upper half of the front of the board, and all **even-numbered** components are on the lower half (this should hopefully make populating only the 3V3 or 5V regulator circuits a bit more clear, as you'll only be soldering one half of the board).
+
+I have not sent this board revision to be fabbed.

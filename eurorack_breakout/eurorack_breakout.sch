@@ -547,5 +547,5 @@ Wire Notes Line
 Text Notes 8400 7750 2    69   Italic 14
 16-Pin Eurorack Power Breakout
 Text Notes 6300 7050 0    49   ~ 0
-(c) 2021 Zachary Hart\nCC BY-SA-4.0\nrev0.1
+(c) 2021 Zachary Hart\nCC BY-SA-4.0\nschematic rev0.1
 $EndSCHEMATC

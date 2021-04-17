@@ -1,5 +1,9 @@
 # Eurorack Power Breakout
 
+|Front|Back|
+|:-:|:-:|
+|![eurorack_breakout_front](https://user-images.githubusercontent.com/4873335/115104209-c2683d00-9f0b-11eb-802f-f0cee909430f.png)|![eurorack_breakout_back](https://user-images.githubusercontent.com/4873335/115104233-e4fa5600-9f0b-11eb-90e3-a50abdaadf18.png)|
+
 **Warning**: I am, perhaps, the furthest thing there is from an EE or CE. 
 I have a rudimentary (at best) understanding of the physics involved in the electronics.
 I mostly understand the following:

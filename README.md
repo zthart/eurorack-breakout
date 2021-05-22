@@ -82,7 +82,7 @@ I would personally recommend cutting it only in the case that you mess up one ha
 |`U1`|LM1117-3.3\*|Linear Regulator|([digikey](https://www.digikey.com/en/products/detail/on-semiconductor/LM1117MPX-33NOPB/13559953))|
 |`U2`|LM1117-5.0\*|Linear Regulator|([digikey](https://www.digikey.com/en/products/detail/on-semiconductor/LM1117MPX-50NOPB/13559966))|
 |`FB1`| -- |Ferrite Bead|([digikey](https://www.digikey.com/en/products/detail/w-rth-elektronik/742792312/1639577))|
-|`D1-D3`|1N4819\*\*|Schottky Diode|([digikey](https://www.digikey.com/en/products/detail/diodes-incorporated/1N5819HW-7-F/814970))
+|`D1-D3`|1N5819\*\*|Schottky Diode|([digikey](https://www.digikey.com/en/products/detail/diodes-incorporated/1N5819HW-7-F/814970))
 
 _\*I bought these very cheaply._
 _Notice that they're from ON Semiconductor rather than the more expensive LM1117-series from TI._

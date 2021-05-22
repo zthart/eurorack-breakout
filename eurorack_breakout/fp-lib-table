@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name eurorack_breakout)(type KiCad)(uri ${KIPRJMOD}/eurorack_breakout.pretty)(options "")(descr ""))
+)

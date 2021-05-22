@@ -13,31 +13,26 @@ I mostly understand the following:
 3. Send power the wrong way and something very expensive goes \*pop\*.
 4. \*pop\* is bad.
 
-I am typing this now as I've _already_ sent the first revision of these boards off to be made and am just now realizing that I probably should've included some diodes on the power lines from the rack power supply, but I haven't (see above).
-When I get my rev0.1 boards back from the fab I'll make some updates, I'm sure.
-
 The `eurorack_breakout` directory contains the KiCad project, schematic, and pcb files for this project.
-I have not, as of yet, received my first rev of fabricated boards.
-Please do not use this project unless you've got more knowledge than me and understand better why it works or why it's horribly broken and going to catch your rack power supply on fire, and then your apartment on fire, and then you on fire.
+
+The first prototypes of the `norev` boards have performed well at what they're meant to do, and a new batch of the boards has been ordered with a few improvements (reverse-polarity protection diodes for the rack supply +12/-12/+5V rails, primarily).
+I have some extras of each, and would be happy to send you one if you reach out and cover shipping.
 
 ## Oops! All SMD
 
 You'll notice everything is a SMD component, aside from the pin headers on either end of the PCB.
 None of the package sizes are _too_ too difficult, so I'm confident you'll figure it out.
-The two ceramic decoupling capacitors on the linear regulators (`C5` and `C6`) are the smallest package, and may be tricky.
+The two ceramic decoupling capacitors on the linear regulators (`C3` and `C6`), as well as the reverse polarity diodes (`D1-D3`) are the smallest packages, and may be tricky.
 Just be patient use tweezers, flux, and make sure your soldering iron is tinned and you're using a relatively-small-ish conical tip.
-I used the hand-soldering extended footprints KiCad provides for each package, so every component should have enough room to get a soldering iron around.
+I used the hand-soldering extended footprints KiCad provides for each package when possible, so every component should have enough room to get a soldering iron around.
 
 ## Optional Regulated Power
 
-As is, the unpopulated board can be used to route 10- or 16-pin Eurorack power from a 2-by connector to a 1-by connector with one less ground. 
+As is, the board (when populated with only the reverse-polarity protection diodes) can be used to route 10- or 16-pin Eurorack power from a 2-by connector to a 1-by connector with one less ground. 
 The Gate and CV lines on the 16-pin connector are also not routed anywhere (except between columns).
 If you need these lines my recommendation is to simply not need them (I don't need them for my purposes so I decided not to route them, I don't know how many modules actually use them).
-There are two solder jumpers on the board -- labelled `3V3` and `5V` -- to pass +12V from the Eurorack power through the LM1117-3.3 and LM1117-5.0 circuits, respectively.
-If you're using 5V tolerant digital circuitry in your module and want to support just 16-pin connectors, you don't even need to populate the board.
-The 3V3 circuit is comprised of all **odd-numbered** components (`C1`, `C3`, `U1`, etc.).
-The 5V circuit is comprised of all **even-numbered** components.
-This may be helpful for you to visualize the circuit on the board.
+There are two solder jumpers on the board -- `JP1` and `JP2` -- to pass +12V from the Eurorack power through the LM1117-3.3 and LM1117-5.0 circuits, respectively.
+If you're using 5V tolerant digital circuitry in your module and want to support just 16-pin connectors, you don't even need to populate the board (sans diodes - those need to be populated for anything but ground be connected).
 
 ### Messing up
 
@@ -54,12 +49,12 @@ The 3.3V circuit consists of the following:
 |:-:|--:|--:|
 |`U1`|LM1117-3.3|Linear Regulator|
 |`C1`|47uF|Aluminum Polymer Cap|
-|`C3`|47uF|Aluminum Polymer Cap|
-|`C5`|0.1uF|Ceramic Cap|
+|`C2`|47uF|Aluminum Polymer Cap|
+|`C3`|0.1uF|Ceramic Cap|
 |`FB1`\*| -- |Ferrite Bead|
 
 _\*The ferrite bead is not needed if you don't want/need a slightly cleaner 3.3V supply._
-_The circuit will work without it populated, but pin 7 on the breakout-side connector will be NC._
+_The circuit will work without it populated, but pin 7 on the breakout-side connector will be NC. You can bridge the FB footprint, or pin 7 and 8 on the breakout-side connector directly if you would like 2 3V3 pins._
 
 If you don't need 3.3V power for your testing, cut the trace connecting the two halves of the jumper with a razor blade or hobby knife (carefully).
 You can also not cut it, and just leave the entire portion of the board unpopulated.
@@ -73,8 +68,8 @@ The 5V circuit consists of the following:
 |Part Ref|Value|Type|
 |:-:|--:|--:|
 |`U2`|LM1117-5.0|Linear Regulator|
-|`C2`|47uF|Aluminum Polymer Cap|
 |`C4`|47uF|Aluminum Polymer Cap|
+|`C5`|47uF|Aluminum Polymer Cap|
 |`C6`|0.1uf|Ceramic Cap|
 
 If you don't need 5V power for your testing, cut the trace connecting the two halves of the jumper with a razor blade or hobby knife (carefully).
@@ -86,11 +81,12 @@ I would personally recommend cutting it only in the case that you mess up one ha
 
 |Part Ref|Value|Type|Link|
 |:-:|--:|--:|:-:|
-|`C1`-`C4`|47uF|Aluminum Polymer Cap|([digikey](https://www.digikey.com/en/products/detail/kemet/A768EB476M1VLAE042/13420538))|
-|`C5`, `C6`|0.1uF|Ceramic Cap|([digikey](https://www.digikey.com/en/products/detail/w-rth-elektronik/885012208087/5454754))|
+|`C1`, `C2`, `C4`, `C5`|47uF|Aluminum Polymer Cap|([digikey](https://www.digikey.com/en/products/detail/kemet/A768EB476M1VLAE042/13420538))|
+|`C3`, `C6`|0.1uF|Ceramic Cap|([digikey](https://www.digikey.com/en/products/detail/w-rth-elektronik/885012208087/5454754))|
 |`U1`|LM1117-3.3\*|Linear Regulator|([digikey](https://www.digikey.com/en/products/detail/on-semiconductor/LM1117MPX-33NOPB/13559953))|
 |`U2`|LM1117-5.0\*|Linear Regulator|([digikey](https://www.digikey.com/en/products/detail/on-semiconductor/LM1117MPX-50NOPB/13559966))|
 |`FB1`| -- |Ferrite Bead|([digikey](https://www.digikey.com/en/products/detail/w-rth-elektronik/742792312/1639577))|
+|`D1-D3`|1N4819\*\*|Schottky Diode|([digikey](https://www.digikey.com/en/products/detail/diodes-incorporated/1N5819HW-7-F/814970))
 
 _\*I bought these very cheaply._
 _Notice that they're from ON Semiconductor rather than the more expensive LM1117-series from TI._
@@ -99,11 +95,15 @@ _My presumption here is that, while you can power your dev board/prototypes from
 _Better yet, a benchtop supply (a Eurorack case w/ supply and a reasonble hobbyist benchtop supply run you about the same $$$, so I bought a case first)._
 _This board might be slightly noisier with the ON Semiconductor regulators, but they're footprint compatible with the TI models if you are really worried about noise from the switching supply on your rack._
 
+_\*\*I bought a few hundred of these a long time ago on `<insert Chinese Amazon here>` for another project, and used them here because I had them lying around._
+_As of writing this, they're unavailable in the appropriate footprint on Digikey, but I imagine that they can be had on `<Chinese Amazon>` still - you may also find them on other electronic component supply shops._
+_I won't link to a specific listing, since I prefer to source parts from places like Mouser or Digikey these days, but these can be had for about $1/lot of 100, if you're willing to wait a month or so for them to arrive in the mail `:^ )`_
+
 ## Board revision history
 
 A quick rundown of the revision history of the board, mostly for my own sanity. 
 Note that I'm tracking the schematic revision and board revision numbers separately. 
-The schematic may be unchanged between board revisions (and has been unchanged thus far).
+The schematic may be unchanged between board revisions.
 
 ### `norev`
 
@@ -127,3 +127,14 @@ The `rev02` boards differ from the previous revisions as follows:
 - The positions of `C2` and `C3` were swapped, so that all **odd-numbered** components are on the upper half of the front of the board, and all **even-numbered** components are on the lower half (this should hopefully make populating only the 3V3 or 5V regulator circuits a bit more clear, as you'll only be soldering one half of the board).
 
 I have not sent this board revision to be fabbed.
+
+### `rev0.3`
+
+The `rev0.3` boards differ from the previous revisions as follows:
+
+- Reverse-polarity protection diodes for the rack +12V, -12V, and +5V lines (I recommend 1N5819 diodes, any reasonably tolerant schottky diode should work). These have an SOD-123 footprint, and are somewhat tricky to hand solder.
+- OSHW Silkscreen and new `zzzzzzzz` graphic on back silkscreen/mask.
+- Various silkscreen adjustments to move some component references out from underneath others
+- Pad jumpers for the 3v3 and 5v enable lines are incorporated into the schematic and labelled as `JP1` and `JP2` respectively.
+- Capacitor reference values have changed. `C1-C3` are the two aluminum and ceramic decoupling capacitor for the 3v3 circuit. `C4-C6` are the two aluminum and ceramic decoupling capacitor for the 5v circuit.
+- The project licence has been switched to the CERN-OHL-P v2 license, and the silkscreen updated accordingly.

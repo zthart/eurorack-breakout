@@ -1,4 +1,4 @@
-19224468878498856
+19254560042513717
 AudioJacks
 Jack_3.5mm_Cliff_FCR1281_Horizontal
 
@@ -2460,20 +2460,6 @@ Calibration_Scale
 Gauge_100mm_Type2_SilkScreenTop
 Gauge, Massstab, 100mm, SilkScreenTop, Type 2,
 Gauge Massstab 100mm SilkScreenTop Type 2
-0
-0
-0
-Cancer
-Miku
-
-
-0
-0
-0
-Cancer
-Miku_18_18_Mirrored
-
-
 0
 0
 0
@@ -72638,6 +72624,76 @@ TO-264-5 Vertical RM 3.81mm
 0
 5
 5
+Panelization
+0.5mm-NPTH-Drill
+
+
+0
+0
+0
+Panelization
+4MM_Stencil_Hole
+
+
+0
+0
+0
+Panelization
+mouse-bite-1mm-slot
+
+
+0
+0
+0
+Panelization
+mouse-bite-2.54mm-slot
+
+
+0
+0
+0
+Panelization
+mouse-bite-2mm-slot
+
+
+0
+0
+0
+Panelization
+mouse-bite-3mm-slot
+
+
+0
+0
+0
+Panelization
+mouse-bite-3mm-slot-3way
+
+
+0
+0
+0
+Panelization
+mouse-bite-3mm-slot-4way
+
+
+0
+0
+0
+Panelization
+mouse-bite-3mm-slot-corner
+
+
+0
+0
+0
+Panelization
+mouse-bite-3mm-slot-intersection
+
+
+0
+0
+0
 Potentiometer_SMD
 Potentiometer_ACP_CA6-VSMD_Vertical
 Potentiometer, vertical, ACP CA6-VSMD, http://www.acptechnologies.com/wp-content/uploads/2017/06/01-ACP-CA6.pdf
@@ -76362,6 +76418,20 @@ rotary encoder
 0
 5
 4
+SamacSys_Parts
+Molex_02x08_2.54mm_Shrouded_Keyed
+70246-1602
+Connector
+0
+16
+16
+SamacSys_Parts
+Slider_Potentiometer_Bourns_PTL_30mm
+PTL30-19G1-103B2-1
+Variable Resistor
+0
+6
+6
 Sensor
 Aosong_DHT11_5.5x12.0_P2.54mm
 Temperature and humidity module, http://akizukidenshi.com/download/ds/aosong/DHT11.pdf
@@ -83096,6 +83166,20 @@ varistor SIOV
 0
 2
 2
+eurorack_breakout
+OSHW-Symbol_6.7x6mm_SilkScreen
+Open Source Hardware Symbol
+Logo Symbol OSHW
+0
+0
+0
+eurorack_breakout
+zzzzzzzz_new_5.2x3.75mm
+
+
+0
+0
+0
 kbd
 1pin_conn
 Resitance 3 pas
@@ -83629,6 +83713,41 @@ waffle
 0
 0
 zzzzzzzz
+Adafruit_Feather_M0_Express
+
+
+0
+28
+28
+zzzzzzzz
+PinHeader_1x03_P2.54mm_Vertical_Castellated_LH
+Through hole straight pin header, 1x03, 2.54mm pitch, castellated left-hand side
+Through hole pin header THT 1x03 2.54mm castellated left hand
+0
+6
+3
+zzzzzzzz
+PinHeader_1x03_P2.54mm_Vertical_Castellated_RH
+Through hole straight pin header, 1x03, 2.54mm pitch, castellated, right-hand side
+Through hole pin header THT 1x03 2.54mm castellated right-hand
+0
+6
+3
+zzzzzzzz
+ramiel
+
+
+0
+0
+0
+zzzzzzzz
+ramiel_back_33_8x29_7.kicad
+
+
+0
+0
+0
+zzzzzzzz
 small_miku
 
 
@@ -83644,6 +83763,20 @@ zzzzzzzz_back
 0
 zzzzzzzz
 zzzzzzzz_back_no_cu
+
+
+0
+0
+0
+zzzzzzzz
+zzzzzzzz_new_5.2x3.75mm
+
+
+0
+0
+0
+zzzzzzzz
+zzzzzzzz_new_front_soldermask
 
 
 0

@@ -1,4 +1,4 @@
-update=4/16/2021 11:16:17 AM
+update=5/21/2021 11:10:44 PM
 version=1
 last_client=kicad
 [general]
@@ -241,10 +241,10 @@ dPairGap=0.25
 dPairViaGap=0.25
 [pcbnew/Netclasses/1]
 Name=Eurorack 12V
-Clearance=0.3
+Clearance=0.2
 TrackWidth=0.4
 ViaDiameter=0.8
-ViaDrill=0.5
+ViaDrill=0.4
 uViaDiameter=0.3
 uViaDrill=0.1
 dPairWidth=0.2

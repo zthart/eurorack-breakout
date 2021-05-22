@@ -1,9 +1,5 @@
 # Eurorack Power Breakout
 
-|Front|Back|
-|:-:|:-:|
-|![eurorack_breakout_front](https://user-images.githubusercontent.com/4873335/115104209-c2683d00-9f0b-11eb-802f-f0cee909430f.png)|![eurorack_breakout_back](https://user-images.githubusercontent.com/4873335/115104233-e4fa5600-9f0b-11eb-90e3-a50abdaadf18.png)|
-
 **Warning**: I am, perhaps, the furthest thing there is from an EE or CE. 
 I have a rudimentary (at best) understanding of the physics involved in the electronics.
 I mostly understand the following:
@@ -16,7 +12,7 @@ I mostly understand the following:
 The `eurorack_breakout` directory contains the KiCad project, schematic, and pcb files for this project.
 
 The first prototypes of the `norev` boards have performed well at what they're meant to do, and a new batch of the boards has been ordered with a few improvements (reverse-polarity protection diodes for the rack supply +12/-12/+5V rails, primarily).
-I have some extras of each, and would be happy to send you one if you reach out and cover shipping.
+I have some extras of both the `norev` and `rev0.3` boards, and would be happy to send you one if you reach out and cover shipping.
 
 ## Oops! All SMD
 
@@ -138,3 +134,5 @@ The `rev0.3` boards differ from the previous revisions as follows:
 - Pad jumpers for the 3v3 and 5v enable lines are incorporated into the schematic and labelled as `JP1` and `JP2` respectively.
 - Capacitor reference values have changed. `C1-C3` are the two aluminum and ceramic decoupling capacitor for the 3v3 circuit. `C4-C6` are the two aluminum and ceramic decoupling capacitor for the 5v circuit.
 - The project licence has been switched to the CERN-OHL-P v2 license, and the silkscreen updated accordingly.
+
+A panel of these boards has been sent off to the fab.
